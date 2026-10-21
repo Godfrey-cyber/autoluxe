@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Heart, Menu, Search, X } from "lucide-react";
+import { Heart, Menu, Search, X, User } from "lucide-react";
 import { useStore } from "@/lib/store";
 import { SearchModal } from "./SearchModal";
 
@@ -28,6 +28,7 @@ export function SiteHeader() {
             <Heart className="h-4 w-4" />
             {favourites.length > 0 && <span className="absolute right-1 top-1 grid h-4 min-w-4 place-items-center rounded-full bg-accent px-1 text-[0.6rem] font-bold">{favourites.length}</span>}
           </Link>
+          <button aria-label="User" className="grid h-10 w-10 place-items-center rounded-full hover:bg-muted"><User className="h-4 w-4" /></button>
           <button onClick={() => setMenu(!menu)} aria-label="Menu" className="grid h-10 w-10 place-items-center md:hidden">{menu ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}</button>
         </div>
       </div>
